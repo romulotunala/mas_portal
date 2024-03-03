@@ -32,6 +32,15 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npm run build
 
+      - name: List files in ./out
+        run: ls -R ./out
+
+      - name: Debug GitHub Actions
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Contents of current directory: $(ls)"
+          echo "Contents of ./out: $(ls -R ./out)"
+      
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
