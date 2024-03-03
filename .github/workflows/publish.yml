@@ -32,12 +32,6 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npm run build
 
-      - name: Granting permissions
-        run: chmod -R 777 ./
-
-      - name: Listar arquivos
-        run: ls -la
-
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
