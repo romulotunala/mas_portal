@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Listar arquivos
-        run: ls && && ls -la src/app
+        run: ls -la && ls -la src/app
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
