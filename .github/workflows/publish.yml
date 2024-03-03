@@ -37,8 +37,8 @@ jobs:
 
       - name: Debug GitHub Actions
         run: |
-          echo "Current directory: $(pwd)"
           echo "Contents of current directory: $(ls)"
+          echo "Current directory: $(pwd)"
           echo "Contents of ./out: $(ls -R ./out)"
       
       - name: Upload artifact 📡
