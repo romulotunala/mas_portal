@@ -1,4 +1,7 @@
 import Image from "next/image";
+
+// import logo from "/logo.jpeg";
+
 import styles from "./page.module.css";
 
 export default function Home() {
