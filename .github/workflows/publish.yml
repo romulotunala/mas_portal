@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Granting permissions
-        run: chmod -R 777 out
+        run: chmod -R 777 ./
 
       - name: Listar arquivos
         run: ls -la
