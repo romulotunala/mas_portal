@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// import logo from "/logo.jpeg";
+import logo from "../assets/logo.jpeg";
 
 import styles from "./page.module.css";
 
@@ -10,7 +10,7 @@ export default function Home() {
       <main className={styles.container}>
         <Image
           className={styles.logo}
-          src="/logo.jpeg"
+          src={logo}
           alt="Logo Ministério Anunciando Salvação"
           width={100}
           height={100}
