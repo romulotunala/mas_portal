@@ -30,7 +30,7 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npm run build
+        run: npm run build && npm run export
 
       - name: Listar arquivos
         run: ls -la && ls -la src/app
