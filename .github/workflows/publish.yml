@@ -30,16 +30,10 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npm run build
-
-      - name: List files in ./out
-        run: ls -R ./out
-
-      - name: Debug GitHub Actions
-        run: |
-          echo "Contents of current directory: $(ls)"
-          echo "Current directory: $(pwd)"
-          echo "Contents of ./out: $(ls -R ./out)"
+        run: | 
+          touch .env.local
+          echo NEXT_PUBLIC_FB_CLIENT_API_KEY=${{ secrets.NEXT_PUBLIC_FB_CLIENT_API_KEY }} >> .env.local
+          npm run build
       
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
@@ -50,6 +44,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      env: |
+        NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
 
     runs-on: ubuntu-latest
     needs: build
